@@ -1,2 +1,32 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h2><%= @restaurant.name.capitalize %></h2>
+<br>
+
+<p><strong><%= @restaurant.category.capitalize %></strong></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone: <%= @restaurant.phone_number %></p>
+<br>
+
+<h4>Reviews</h4>
+<%= link_to " + Add Review", new_restaurant_review_path(@restaurant)%>
+<br>
+
+<br>
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Content</th>
+    <th>Rating</th>
+  </thead>
+  <tbody>
+    <% @restaurant.reviews.each do |rev| %>
+      <tr>
+        <td><%= rev.id %></td>
+        <td><%= rev.content %></td>
+        <td><%= rev.rating %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to "< Back", restaurants_path %>

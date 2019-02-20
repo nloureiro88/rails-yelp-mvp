@@ -13,3 +13,19 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+// Common styles
+
+body {
+  font-size: 14px;
+  padding: 20px;
+}
+
+td, th {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+form label, form input, form .btn {
+  font-size: 14px;
+}
